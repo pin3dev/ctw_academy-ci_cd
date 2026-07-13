@@ -20,14 +20,19 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
-    - uses: ./.github/actions/maven_build
-      name: Build with Maven Actions
-
     #- name: Build with Maven
     #  run: mvn -B package --file pom.xml
 
-    - name: Build docker image
-      run: docker build . --file Dockerfile --tag academy:$(date +%s)
+    - uses: ./.github/actions/maven_build
+    name: Build with Maven Actions
+
+    -uses: ./.github/actions/docker_build
+    name: Build docker image
+
+    #- name: Docker list
+    #run: docker image ls
+
+    #- name: Build docker image
+    #  run: docker build . --file Dockerfile --tag academy:$(date +%s)
         
-    - name: Docker list
-      run: docker image ls
+

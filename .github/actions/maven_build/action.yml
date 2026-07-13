@@ -1,5 +1,5 @@
-name: Replace-With-Your-Action-Name
-description: Replace-With-Your-Action-Description
+name: Build with Maven Actions
+description: maven action
 runs:
   using: composite
   steps:
