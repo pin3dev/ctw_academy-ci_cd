@@ -27,8 +27,13 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml
+
+    steps:
+    - uses: ./.github/actions/maven_build
+    - name: Build with Maven Actions
+
+    #- name: Build with Maven
+    #  run: mvn -B package --file pom.xml
 
     - name: Build docker image
       run: docker build . --file Dockerfile --tag academy:$(date +%s)
