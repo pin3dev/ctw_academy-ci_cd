@@ -28,7 +28,6 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
-    steps:
     - uses: ./.github/actions/maven_build
     - name: Build with Maven Actions
 
