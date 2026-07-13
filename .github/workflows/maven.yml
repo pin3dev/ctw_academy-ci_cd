@@ -24,10 +24,10 @@ jobs:
     #  run: mvn -B package --file pom.xml
 
     - uses: ./.github/actions/maven_build
-    name: Build with Maven Actions
+      name: Build with Maven Actions
 
-    -uses: ./.github/actions/docker_build
-    name: Build docker image
+    - uses: ./.github/actions/docker_build
+      name: Build docker image
 
     #- name: Docker list
     #run: docker image ls
